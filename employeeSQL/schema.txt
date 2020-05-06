@@ -1,44 +1,42 @@
-Employee
+Employees
 -
 Emp_no INTEGER PK
+Birth_date DATE
 First_name VARCHAR
 Last_name VARCHAR
 Gender VARCHAR
-Birth_date DATE
 Hire_date DATE 
 
 Departments
 -
-Dept_no INTEGER PK
+Dept_no VARCHAR PK
 Dept_name VARCHAR
 
 Titles
 -
-Emp_no INTEGER FK >- Employee.emp_no
-First_name VARCHAR
-Last_name VARCHAR
-Gender VARCHAR
-Birth_date DATE
-Hire_date DATE
+Emp_no INTEGER FK >- Employees.emp_no
+Title VARCHAR
+From_date DATE
+To_date DATE
 
 Salaries
 -
-Emp_no INTEGER FK - Employee.emp_no
-Salary VARCHAR
+Emp_no INTEGER FK - Employees.emp_no
+Salary INTEGER
 From_date DATE
 TO_date DATE 
 
 Dept_Employee
 -
-Dept_no INTEGER FK >- Departments.Dept_no
-Emp_no INTEGER FK >- Employee.emp_no
+Dept_no VARCHAR FK >- Departments.Dept_no
+Emp_no INTEGER FK >- Employees.emp_no
 From_date DATE
 To_date DATE
 
 
 Dept_Manager
 -
-Dept_no INTEGER FK >- Departments.Dept_no
-Emp_no INTEGER FK >- Employee.emp_no
+Dept_no VARCHAR FK >- Departments.Dept_no
+Emp_no INTEGER FK >- Employees.emp_no
 From_date DATE
 To_date DATE
